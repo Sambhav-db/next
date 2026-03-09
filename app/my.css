@@ -1,0 +1,32 @@
+.container {
+  padding: 60px 40px;
+}
+
+.nav {
+  padding: 16px 40px;
+  background: #0f172a;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.links {
+  display: flex;
+  gap: 24px;
+}
+
+.links a {
+  text-decoration: none;
+  color: #cbd5e1;
+  transition: color 0.2s ease;
+}
+
+.links a:hover {
+  color: white;
+}
