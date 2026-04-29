@@ -1,4 +1,6 @@
+import AboutSection from "@/components/AboutSection";
 import CategorySection from "@/components/CategorySection";
+import CTASection from "@/components/CTASection";
 import HeroSection from "@/components/HeroSection";
 
 export default function HomePage() {
@@ -6,6 +8,8 @@ export default function HomePage() {
     <>
       <HeroSection />
       <CategorySection />
+      <AboutSection />
+      <CTASection />
     </>
   );
 }

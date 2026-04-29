@@ -34,12 +34,12 @@ const HeroSection = () => {
   ];
 
   return (
-    <section className="max-w-7xl mx-auto px-4 py-12">
+    <section className="max-w-7xl mx-auto px-4 py-12 mt-16">
       <div className="flex flex-col lg:flex-row gap-6">
         {/* Main Card */}
         <div className="relative flex-1 lg:flex-[2] rounded-xl overflow-hidden shadow-lg h-96 lg:h-[400px]">
           {/* Badge */}
-          <div className="absolute top-4 left-4 bg-[#f1f1ff] text-[#635bff] px-4 py-1 rounded-full text-xs font-semibold z-10">
+          <div className="absolute top-4 left-4 z-10 bg-white/10 backdrop-blur-md border border-white/20 text-white px-4 py-1 rounded-full text-xs">
             {mainCard.category}
           </div>
           <Image
@@ -67,9 +67,9 @@ const HeroSection = () => {
               className="relative rounded-xl overflow-hidden shadow-md h-48"
             >
               {/* Badge */}
-              <div className="absolute top-4 left-4 bg-[#f1f1ff] text-[#635bff] px-4 py-1 rounded-full text-xs font-semibold z-10">
-                {card.category}
-              </div>
+              <div className="absolute top-4 left-4 z-10 bg-white/10 backdrop-blur-md border border-white/20 text-white px-4 py-1 rounded-full text-xs">
+            {card.category}
+          </div>
               <Image
                 src={card.image}
                 alt={card.title}

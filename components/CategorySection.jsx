@@ -44,7 +44,7 @@ const CategorySection = () => {
           >
             {/* Card Image (Initially hidden and the background is white) */}
             <div
-              className="relative w-full h-64 bg-white group-hover:bg-cover group-hover:bg-center transition-all duration-300"
+              className="relative w-full h-64 bg-gray-800 group-hover:bg-cover group-hover:bg-center transition-all duration-300"
               style={{ backgroundImage: `url(${category.image})` }}
             >
               {/* Dark Overlay on Hover */}
@@ -62,7 +62,7 @@ const CategorySection = () => {
 
             {/* Card Content (Button hidden by default) */}
             <div
-              className="absolute inset-0 flex flex-col items-center justify-center p-6 text-black opacity-100 group-hover:opacity-0 group-hover:text-white transition-all duration-300"
+              className="absolute inset-0 flex flex-col items-center justify-center p-6 text-white opacity-100 group-hover:opacity-0 group-hover:text-white transition-all duration-300"
               style={{ zIndex: 9 }}
             >
               <h3 className="text-2xl font-semibold mb-2">{category.title}</h3>
