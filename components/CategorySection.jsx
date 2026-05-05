@@ -6,85 +6,110 @@ import catThree from "@/app/assets/images/catThree.png";
 import catFour from "@/app/assets/images/catFour.png";
 import { ChevronRight } from "lucide-react";
 
+const categories = [
+  {
+    title: "Tech",
+    description: "The latest in technology and development trends.",
+    image: catOne,
+  },
+  {
+    title: "Lifestyle",
+    description: "Tips and stories for a better lifestyle.",
+    image: catTwo,
+  },
+  {
+    title: "Sports",
+    description: "Latest updates from the world of sports.",
+    image: catThree,
+  },
+  {
+    title: "Health",
+    description: "Stay fit and healthy with these articles.",
+    image: catFour,
+  },
+];
+
 const CategorySection = () => {
-  // Example category data
-  const categories = [
-    {
-      title: "Tech",
-      description: "The latest in technology and development trends.",
-      image: catOne, 
-    },
-    {
-      title: "Lifestyle",
-      description: "Tips and stories for a better lifestyle.",
-      image: catTwo,
-    },
-    {
-      title: "Sports",
-      description: "Latest updates from the world of sports.",
-      image: catThree,
-    },
-    {
-      title: "Health",
-      description: "Stay fit and healthy with these articles.",
-      image: catFour,
-    },
-  ];
-
   return (
-    <section className="max-w-7xl mx-auto px-4 py-12">
-      <h2 className="text-4xl font-bold text-center mb-12">
-        Explore Categories
-      </h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        {categories.map((category, index) => (
-          <div
-            key={index}
-            className="relative group rounded-xl overflow-hidden shadow-lg cursor-pointer bg-white transition-all duration-300 ease-in-out"
-          >
-            {/* Card Image (Initially hidden and the background is white) */}
-            <div
-              className="relative w-full h-64 bg-gray-800 group-hover:bg-cover group-hover:bg-center transition-all duration-300"
-              style={{ backgroundImage: `url(${category.image})` }}
-            >
-              {/* Dark Overlay on Hover */}
-              <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-50 transition-all duration-300"></div>
+    <section className="relative py-24 text-white overflow-hidden">
+      {/* Background */}
+      <div className="absolute inset-0 -z-10 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900" />
 
-              {/* Image (hidden by default, but displayed on hover) */}
+      {/* Glow Effects */}
+      <div className="absolute w-96 h-96 bg-purple-500/20 blur-[120px] top-0 left-10" />
+      <div className="absolute w-96 h-96 bg-blue-500/20 blur-[120px] bottom-0 right-10" />
+
+      <div className="max-w-7xl mx-auto px-4">
+        {/* Section Header */}
+        <div className="text-center max-w-3xl mx-auto mb-14">
+          <p className="inline-block bg-white/10 backdrop-blur-md border border-white/20 text-xs px-4 py-1 rounded-full mb-5 text-gray-300">
+            Browse Topics
+          </p>
+
+          <h2 className="text-4xl md:text-5xl font-bold leading-tight mb-5">
+            Explore{" "}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-400">
+              Categories
+            </span>
+          </h2>
+
+          <p className="text-gray-300 text-lg">
+            Find tutorials, stories, and practical guides across topics that help
+            developers learn faster and build better.
+          </p>
+        </div>
+
+        {/* Category Cards */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {categories.map((category) => (
+            <article
+              key={category.title}
+              className="group relative h-[320px] rounded-3xl overflow-hidden bg-white/5 backdrop-blur-lg border border-white/10 shadow-lg cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:bg-white/10"
+            >
+              {/* Image */}
               <Image
                 src={category.image}
                 alt={category.title}
-                layout="fill"
-                className="object-cover opacity-0 group-hover:opacity-100 transition-all duration-300"
-                style={{ zIndex: 1 }}
+                fill
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                className="object-cover opacity-45 group-hover:opacity-80 group-hover:scale-110 transition-all duration-500"
               />
-            </div>
 
-            {/* Card Content (Button hidden by default) */}
-            <div
-              className="absolute inset-0 flex flex-col items-center justify-center p-6 text-white opacity-100 group-hover:opacity-0 group-hover:text-white transition-all duration-300"
-              style={{ zIndex: 9 }}
-            >
-              <h3 className="text-2xl font-semibold mb-2">{category.title}</h3>
-              <p className="text-sm text-center mb-4">{category.description}</p>
-              {/* Button shown only on hover */}
-              <button className="bg-white text-black px-4 py-2 rounded-full hover:bg-gray-200 transition-all duration-300 opacity-0 group-hover:opacity-100">
-                {category.buttonText}
-              </button>
-            </div>
+              {/* Dark Gradient Overlay */}
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/60 to-transparent" />
 
-            {/* On Hover State */}
-            <div className="absolute inset-0 flex flex-col items-center justify-center bg-[#00000080] p-6 bg-opacity-40 opacity-0 group-hover:opacity-100 group-hover:bg-opacity-0 transition-all duration-300" style={{ zIndex: 9 }}>
-              <h3 className="text-2xl font-semibold text-white mb-2">
-                {category.title}
-              </h3>
-              <p className="text-sm text-center text-white mb-4">{category.description}</p>
-              <a href="#" className="text-white font-semibold hover:underline flex align-center">
-                Explore Category <ChevronRight size={20} />
-              </a>
-            </div>
-          </div>
-        ))}
+              {/* Subtle Border Glow */}
+              <div className="absolute inset-0 rounded-3xl border border-white/10 group-hover:border-purple-400/40 transition-all duration-300" />
+
+              {/* Content */}
+              <div className="absolute inset-0 z-10 flex flex-col justify-end p-6">
+                <div className="mb-5 h-1 w-10 bg-gradient-to-r from-purple-400 to-blue-400 rounded-full group-hover:w-16 transition-all duration-300" />
+
+                <h3 className="text-2xl font-semibold mb-3 text-white">
+                  {category.title}
+                </h3>
+
+                <p className="text-sm text-gray-300 leading-relaxed mb-5">
+                  {category.description}
+                </p>
+
+                <a
+                  href="#"
+                  className="inline-flex items-center gap-1 text-sm font-semibold text-white/90 hover:text-white transition-all duration-300"
+                >
+                  Explore Category
+                  <ChevronRight
+                    size={18}
+                    className="transition-transform duration-300 group-hover:translate-x-1"
+                  />
+                </a>
+              </div>
+
+              {/* Hover Shine */}
+              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gradient-to-br from-purple-500/10 via-transparent to-blue-500/10" />
+            </article>
+          ))}
+        </div>
       </div>
     </section>
   );

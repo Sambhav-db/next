@@ -1,5 +1,5 @@
 import Image from "next/image";
-import aboutImg from "@/app/assets/images/about.webp"; // add your image
+import aboutImg from "@/app/assets/images/aboutt.jpeg";  
 
 const values = [
   {
